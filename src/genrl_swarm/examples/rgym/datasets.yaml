@@ -1,7 +1,7 @@
 # Composite Dataset Configuration for Reasoning Gym
 # This file defines multiple datasets with their weights and configurations
 
-size: 20  # Total virtual size of the composite dataset
+size: 5  # Total virtual size of the composite dataset
 seed: 42    # Seed for reproducibility
 
 datasets:
@@ -19,23 +19,23 @@ datasets:
     weight: 1
     config:
       min_terms: 2
-      max_terms: 6
+      max_terms: 3
       min_digits: 1
-      max_digits: 4
+      max_digits: 2
       operators: ["+", "-", "*", "/"]
       allow_parentheses: true
       allow_negation: true
       format_style: "natural"
       whitespace: "single"
       seed: 1234
-      size: 10
+      size: 2
   
   # Base Conversion
   - name: base_conversion
     weight: 1
     config:
       min_base: 2
-      max_base: 16
+      max_base: 3
       min_value: 0
       max_value: 1000
       seed: 1239
@@ -54,10 +54,10 @@ datasets:
     weight: 1
     config:
       min_n: 3
-      max_n: 10
+      max_n: 4
       p_zero: 0.25
       seed: 1236
-      size: 10
+      size: 2
       
   # Calendar arithmetic for date calculations
   - name: calendar_arithmetic
@@ -68,19 +68,19 @@ datasets:
       leap_year_range: 200
       tasks: ["count_days", "weekday_of_date", "is_leap_year", "recurring_event_day"]
       seed: 1237
-      size: 10
+      size: 2
 
   # Decimal arithmetic for more complex calculations
   - name: decimal_arithmetic
     weight: 1
     config:
       min_terms: 2
-      max_terms: 6
+      max_terms: 3
       min_num_decimal_places: 1
-      max_num_decimal_places: 3
+      max_num_decimal_places: 1
       precision: 5  
       seed: 1235
-      size: 10
+      size: 2
       
   # Fraction simplification problems
   - name: fraction_simplification
@@ -92,7 +92,7 @@ datasets:
       max_factor: 100
       styles: ["plain", "latex_frac", "latex_dfrac"]
       seed: 1236
-      size: 10
+      size: 2
       
   # Logic puzzles
   - name: propositional_logic
@@ -105,4 +105,4 @@ datasets:
       min_complexity: 1
       max_complexity: 3
       seed: 1238
-      size: 10
+      size: 2
